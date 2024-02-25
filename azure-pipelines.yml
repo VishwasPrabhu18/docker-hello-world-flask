@@ -1,5 +1,14 @@
 # Docker
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 # Build a Docker image
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
